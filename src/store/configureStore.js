@@ -1,10 +1,10 @@
 import {
-  applyMiddleware,
   combineReducers,
-  createStore,
   compose,
-} from '@reduxjs/toolkit';
+  applyMiddleware, createStore,
+} from 'redux';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import profileReducer from './profile/Profile';
 import rocketsReducer from './rockets/Rockets';
 import missionsReducer from './missions/Missions';
@@ -19,9 +19,7 @@ const rootReducer = combineReducers({
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__
-      && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk, logger),
   ),
 );
 /* eslint-enable */
