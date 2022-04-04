@@ -1,14 +1,16 @@
-import logo from './logo.png';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/header/Header';
+import Rockets from './routes/rockets/Rockets';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="text-7xl font-bold underline">
-          Hello world!
-        </h1>
-      </header>
+      <Header />
+      <Routes>
+
+        <Route path="/" element={<Rockets />} />
+
+      </Routes>
     </div>
   );
 }
