@@ -1,21 +1,40 @@
 import React from 'react';
-import Button from '../../components/button/Button';
-import Badge from '../../components/badge/Badge';
 
-const Profile = () => {
-  const testStyle = 'bg-red-500';
-  return (
-    <div>
-      <h1>My Profile</h1>
-      <Button
-        twClasses={testStyle}
-        text="this is a button"
-        handleClick={() => {}}
-        type="button"
-      />
-      <Badge twClasses="bg-blue-600" text="reservation" />
-    </div>
-  );
-};
+const Profile = () => (
+  <main className="mt-6 px-12 w-full flex flex-col  md:flex-row">
+    <section className="w-1/2">
+      <h2 className="text-3xl font-semibold pl-2 pb-4">
+        My missions
+      </h2>
+      <ul className="flex flex-col">
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+      </ul>
+    </section>
+    <section className="w-1/2">
+      <h2 className="text-3xl font-semibold pl-2 pb-4">
+        My Rockets
+      </h2>
+      <ul className="flex flex-col">
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+        <li>asdf</li>
+      </ul>
+    </section>
+  </main>
+);
 
 export default Profile;
