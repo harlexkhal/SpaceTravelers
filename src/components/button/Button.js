@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Button({ ...props }) {
   return (
     <button
-      className={`rounded px-6 py-3 ${props.twClasses}`}
+      className={`rounded p-3 min-w-fit ${props.twClasses}`}
       type={props.type === 'submit' ? 'submit' : 'button'}
       onClick={props.handleClick}
     >
