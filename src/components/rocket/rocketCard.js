@@ -13,7 +13,7 @@ const RocketCard = ({
       <h1 className="font-semibold">{name}</h1>
       <Badge twClasses={reservaton ? 'bg-blue-400' : 'hidden'} text="Reserved" />
       <p>
-       {description}
+        {description}
       </p>
       <Button
         twClasses="bg-blue-500 text-white mt-2"
@@ -26,7 +26,6 @@ const RocketCard = ({
 );
 
 RocketCard.propTypes = {
-  id: PropTypes.number.isRequired,
   reservaton: PropTypes.bool.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
