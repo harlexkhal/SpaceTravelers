@@ -1,9 +1,13 @@
 import GetMissionsFromApi from '../api/Missions';
 
-const GET_MISSIONS_REQUEST = 'SPACE-TRAVELERS/missions/GET_REQUEST';
-const GET_MISSIONS_SUCCESS = 'SPACE-TRAVELERS/missions/GET_SUCCESS';
-const GET_MISSIONS_FAILURE = 'SPACE-TRAVELERS/missions/GET_FAILURE';
-const JOIN_MISSION = 'SPACE-TRAVELERS/missions/JOIN_MISSION';
+const GET_MISSIONS_REQUEST =
+  'SPACE-TRAVELERS/missions/GET_REQUEST';
+const GET_MISSIONS_SUCCESS =
+  'SPACE-TRAVELERS/missions/GET_SUCCESS';
+const GET_MISSIONS_FAILURE =
+  'SPACE-TRAVELERS/missions/GET_FAILURE';
+const JOIN_MISSION =
+  'SPACE-TRAVELERS/missions/JOIN_MISSION';
 
 const initialState = {
   loading: false,
@@ -90,8 +94,14 @@ const missionsReducer = (state = initialState, action) => {
     case JOIN_MISSION:
       return {
         ...state,
-        loading: false,
-        error: action.payload,
+        missionsList: state.missionsList.map(
+          (dataEntry) => {
+            if (dataEntry.id !== action.payload) {
+              return dataEntry;
+            }
+            return { ...dataEntry, reserved: true };
+          },
+        ),
       };
 
     default:
