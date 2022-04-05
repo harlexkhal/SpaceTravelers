@@ -1,11 +1,8 @@
 import GetMissionsFromApi from '../api/Missions';
 
-const GET_MISSIONS_REQUEST =
-  'SPACE-TRAVELERS/missions/GET_REQUEST';
-const GET_MISSIONS_SUCCESS =
-  'SPACE-TRAVELERS/missions/GET_SUCCESS';
-const GET_MISSIONS_FAILURE =
-  'SPACE-TRAVELERS/missions/GET_FAILURE';
+const GET_MISSIONS_REQUEST = 'SPACE-TRAVELERS/missions/GET_REQUEST';
+const GET_MISSIONS_SUCCESS = 'SPACE-TRAVELERS/missions/GET_SUCCESS';
+const GET_MISSIONS_FAILURE = 'SPACE-TRAVELERS/missions/GET_FAILURE';
 
 const initialState = {
   loading: false,
