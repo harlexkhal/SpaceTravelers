@@ -1,9 +1,8 @@
 import React from 'react';
+import RocketCard from '../../components/rocket/rocketCard';
 
 const Rockets = () => (
-  <h1>
-    Ready for launch
-  </h1>
+  <RocketCard id={1} reservaton name="Falcon 9" description="kfjksjakjfkasjf" />
 );
 
 export default Rockets;
