@@ -1,8 +1,9 @@
 import {
   combineReducers,
-  compose,
-  applyMiddleware, createStore,
+  applyMiddleware,
+  createStore,
 } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import profileReducer from './profile/Profile';
@@ -15,13 +16,9 @@ const rootReducer = combineReducers({
   missions: missionsReducer,
 });
 
-/* eslint-disable no-underscore-dangle */
 const store = createStore(
   rootReducer,
-  compose(
-    applyMiddleware(thunk, logger),
-  ),
+  composeWithDevTools(applyMiddleware(logger, thunk)),
 );
-/* eslint-enable */
 
 export default store;
