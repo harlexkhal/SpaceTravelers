@@ -48,6 +48,7 @@ export function getMissions() {
             id,
             mission,
             description,
+            status: ['not a member', 'join mission'],
           };
         });
 
