@@ -38,7 +38,20 @@ export function getMissions() {
     dispatch(getMissionsRequest());
     GetMissionsFromApi()
       .then((data) => {
-        dispatch(getMissionsSuccess(data));
+        const usedMissionData = data.map((dataEntry) => {
+          const {
+            mission_id: id,
+            mission_name: mission,
+            description,
+          } = dataEntry;
+          return {
+            id,
+            mission,
+            description,
+          };
+        });
+
+        dispatch(getMissionsSuccess(usedMissionData));
       })
       .catch((error) => {
         dispatch(getMissionsFailure(error.message));
