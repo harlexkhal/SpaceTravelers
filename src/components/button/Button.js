@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Button({ ...props }) {
   return (
     <button
-      className={`rounded p-3 min-w-fit ${props.twClasses}`}
+      className={`rounded min-w-fit capitalize ${props.twClasses}`}
       type={props.type === 'submit' ? 'submit' : 'button'}
       onClick={props.handleClick}
     >
@@ -17,7 +17,7 @@ Button.defaultProps = {
   type: 'button',
   text: '',
   handleClick: () => {},
-  twClasses: 'text-base',
+  twClasses: '',
 };
 
 Button.propTypes = {
