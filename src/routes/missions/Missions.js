@@ -5,6 +5,7 @@ import Badge from '../../components/badge/Badge';
 import {
   getMissions,
   joinMission,
+  leaveMission,
 } from '../../store/missions/Missions';
 
 const Missions = () => {
@@ -19,7 +20,13 @@ const Missions = () => {
 
   const toggleJointMission = (event) => {
     const missionId = event.target.id;
-    dispatch(joinMission(missionId));
+    if (event.target.textContent === 'Join Mission') {
+      dispatch(joinMission(missionId));
+    }
+
+    if (event.target.textContent === 'Leave mission') {
+      dispatch(leaveMission(missionId));
+    }
   };
 
   return (
