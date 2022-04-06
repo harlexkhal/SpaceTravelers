@@ -15,7 +15,7 @@ const Rockets = () => {
     <RocketCard
       key={rocket.id}
       id={rocket.id}
-      reservaton={false}
+      reservaton={rocket.reservation}
       name={rocket.name}
       description={rocket.description}
       imgUrl={rocket.imgUrl}
