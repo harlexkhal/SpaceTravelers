@@ -3,6 +3,8 @@ import GetMissionsFromApi from '../api/Missions';
 const GET_MISSIONS_REQUEST = 'SPACE-TRAVELERS/missions/GET_REQUEST';
 const GET_MISSIONS_SUCCESS = 'SPACE-TRAVELERS/missions/GET_SUCCESS';
 const GET_MISSIONS_FAILURE = 'SPACE-TRAVELERS/missions/GET_FAILURE';
+const JOIN_MISSION = 'SPACE-TRAVELERS/missions/JOIN_MISSION';
+const LEAVE_MISSION = 'SPACE-TRAVELERS/missions/LEAVE_MISSION';
 
 const initialState = {
   loading: false,
@@ -10,6 +12,7 @@ const initialState = {
   error: '',
 };
 
+// GET missions action creators
 export function getMissionsRequest() {
   return {
     type: GET_MISSIONS_REQUEST,
@@ -45,7 +48,7 @@ export function getMissions() {
             id,
             mission,
             description,
-            status: ['not a member', 'join mission'],
+            reserved: false,
           };
         });
 
@@ -57,6 +60,23 @@ export function getMissions() {
   };
 }
 
+// Join mission action creator
+export function joinMission(id) {
+  return {
+    type: JOIN_MISSION,
+    payload: id,
+  };
+}
+
+// Leave mission action creator
+export function leaveMission(id) {
+  return {
+    type: LEAVE_MISSION,
+    payload: id,
+  };
+}
+
+// Missions reducer
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_MISSIONS_REQUEST:
@@ -75,6 +95,39 @@ const missionsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+
+    case JOIN_MISSION:
+      return {
+        ...state,
+        missionsList: state.missionsList.map(
+          (dataEntry) => {
+            if (
+              String(dataEntry.id)
+              !== String(action.payload)
+            ) {
+              return dataEntry;
+            }
+            return { ...dataEntry, reserved: true };
+          },
+        ),
+      };
+
+    case LEAVE_MISSION:
+      return {
+        ...state,
+        missionsList: state.missionsList.map(
+          (dataEntry) => {
+            if (
+              String(dataEntry.id)
+              !== String(action.payload)
+            ) {
+              return dataEntry;
+            }
+            return { ...dataEntry, reserved: false };
+          },
+        ),
+      };
+
     default:
       return state;
   }
