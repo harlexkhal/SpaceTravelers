@@ -1,21 +1,21 @@
-import { fetchRockets } from "../api/Rockets";
+import fetchRockets from '../api/Rockets';
 
 const FETCH_SUCCESS = 'rockets/store/FETCH_SUCCESSFUL';
 const FETCH_FAILED = 'rockets/store/FETCH_FAILED';
-const CHANGE_RESERVATION = 'rockets/store/CHANGE_RESERVATION'
+const CHANGE_RESERVATION = 'rockets/store/CHANGE_RESERVATION';
 
 export const fetchAllRockets = () => (dispatch) => {
   fetchRockets().then((response) => {
     if (response.status === 200 && response.ok) {
       response.json().then((data) => {
-        let rocketdata = [];
+        const rocketdata = [];
         data.forEach((rocket) => {
           rocketdata.push({
             id: rocket.rocket_id,
             name: rocket.rocket_name,
             description: rocket.description,
             imgUrl: rocket.flickr_images[0],
-            reservation: false
+            reservation: false,
           });
         });
         dispatch(
@@ -47,12 +47,14 @@ const rocketsReducer = (state = [], action) => {
       return action.data;
 
     case CHANGE_RESERVATION:
-      const newState = state.map((rocket) => {
-        rocket.reservation = rocket.id === action.id ? !rocket.reservation : rocket.reservation;
-        return rocket;
-      });
-      return newState;
-      
+      return state.map((rocket) => ({
+        id: rocket.id,
+        name: rocket.name,
+        description: rocket.description,
+        imgUrl: rocket.imgUrl,
+        reservation: rocket.id === action.id ? !rocket.reservation : rocket.reservation,
+      }));
+
     default:
       return state;
   }
