@@ -1,10 +1,8 @@
 import {
   render,
   screen,
-  fireEvent,
   cleanup,
 } from '@testing-library/react';
-import { useState } from 'react';
 import renderer from 'react-test-renderer';
 import Button from '../Button';
 
@@ -38,4 +36,3 @@ describe('Button', () => {
     expect(button.textContent).toContain('My-Button');
   });
 });
-
