@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 export default function Badge({ ...props }) {
   return (
     <div
+      data-testid="badge"
       className={`rounded-lg min-w-fit uppercase ${props.twClasses}`}
     >
       {props.text}
