@@ -5,11 +5,11 @@ import RocketCard from '../../components/rocket/rocketCard';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchAllRockets());
-  }, []);
-
   const rockets = useSelector((state) => state.rockets);
+
+  useEffect(() => {
+    if (rockets.length === 0) dispatch(fetchAllRockets());
+  }, []);
 
   const list = rockets.map((rocket) => (
     <RocketCard
