@@ -1,8 +1,8 @@
 import fetchRockets from '../api/Rockets';
 
-const FETCH_SUCCESS = 'rockets/store/FETCH_SUCCESSFUL';
-const FETCH_FAILED = 'rockets/store/FETCH_FAILED';
-const CHANGE_RESERVATION = 'rockets/store/CHANGE_RESERVATION';
+const FETCH_SUCCESS = 'SPACE-TRAVELERS/rockets/FETCH_SUCCESSFUL';
+const FETCH_FAILED = 'SPACE-TRAVELERS/rockets/FETCH_FAILED';
+const CHANGE_RESERVATION = 'SPACE-TRAVELERS/rockets/CHANGE_RESERVATION';
 
 export const fetchAllRockets = () => (dispatch) => {
   fetchRockets().then((response) => {
