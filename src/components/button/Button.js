@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export default function Button({ ...props }) {
   return (
     <button
-      className={`rounded px-6 py-3 text-xl  ${props.twClasses}`}
+      id={props.id}
+      className={`rounded min-w-fit capitalize ${props.twClasses}`}
       type={props.type === 'submit' ? 'submit' : 'button'}
       onClick={props.handleClick}
     >
@@ -15,13 +16,15 @@ export default function Button({ ...props }) {
 
 Button.defaultProps = {
   type: 'button',
+  text: '',
   handleClick: () => {},
   twClasses: '',
 };
 
 Button.propTypes = {
+  id: PropTypes.string.isRequired,
   type: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   twClasses: PropTypes.string,
   handleClick: PropTypes.func,
 };

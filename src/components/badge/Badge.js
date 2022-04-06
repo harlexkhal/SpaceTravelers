@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Badge({ ...props }) {
   return (
     <div
-      className={`rounded p-[2px] text-base text-white w-fit  ${props.twClasses}`}
+      className={`rounded-lg min-w-fit uppercase ${props.twClasses}`}
     >
       {props.text}
     </div>
