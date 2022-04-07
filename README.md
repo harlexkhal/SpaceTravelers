@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Bookstore CMS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Microverse](https://img.shields.io/badge/Microverse-blueviolet)
 
-## Available Scripts
+> **Space Travelers' Hub** is a web application made for a company that provides commercial and scientific space travel services. The application allows users (future clients) to book rockets and join selected space missions.
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+- TailwindCss
+- React
+- Redux
+- Redux-thunk
+- React-router
+- Redux-logger (tooling)
+- React testing library (unit testing)
+- SpaceX API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Milestones
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [x] Milestone 1: **React app setup with redux using the duck pattern**
+- [x] Milestone 2: **Set up the app navigation using react-router**
+- [x] Milestone 3: **Create an API layer using the SpaceX API**
+- [x] Milestone 4: **Create the Redux store including the action creators and the reducers**
+- [x] Milestone 5: **Integrate the redux store into the app and display the data**
+- [x] Milestone 6: **Implement JoinMission and ReserveRocket functionalities**
+- [x] Milestone 7: **Display the user data in the Profile page**
 
-### `npm test`
+## sneak peek
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Application GIF](./src/images/space-travelers.gif)
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Prerequisites:** A Web Browser (preferably FireFox or Chrome)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Option 1**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Use the live Website
 
-### `npm run eject`
+[Coming soon](https://)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Option 2**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Set up your own copy locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Clone [the GitHub Repository](https://github.com/harlexkhal/SpaceTravelers)
+- Go to the Project folder `cd SpaceTravelers`
+- Run `npm install` to install the _dependencies_
+- Run `npm start` to run the live server.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### (Optional) Run tests
 
-## Learn More
+- Stop the server if it's already running `CTRL` + `C`
+- Run `npm test` run the tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## About the authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Soufiane Boursen**
 
-### Code Splitting
+- GitHub: [@Sboursen](https://github.com/Sboursen)
+- Twitter: [@sboursen_dev](https://twitter.com/sboursen_dev)
+- LinkedIn: [@sboursen](https://linkedin.com/in/sboursen)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Alexander Oguzie-Ibeh**
 
-### Analyzing the Bundle Size
+- GitHub: [@harlexkhal](https://github.com/harlexkhal)
+- Twitter: [@harlexkhal](https://twitter.com/harlexkhal)
+- LinkedIn: [@alexander-oguzie-ibeh](https://www.linkedin.com/in/alexander-oguzie-ibeh-776814164)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributors
 
-### Making a Progressive Web App
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](../../issues/).
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a ⭐️ if you like this project!
 
-### Deployment
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is under the [MIT](./LICENSE) license.
