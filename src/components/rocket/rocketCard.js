@@ -14,9 +14,9 @@ const RocketCard = ({
   };
 
   return (
-    <div className="flex flex-row h-40 ml-10 w-11/12 mb-5">
-      <img src={imgUrl} className="w-56 h-full" alt="rocket-img" />
-      <div className="ml-2.5">
+    <div className="flex flex-row h-48 ml-10 w-11/12 mb-5">
+      <img src={imgUrl} className="w-56" alt="rocket-img" />
+      <div className="ml-2.5 flex flex-col justify-between pb-3">
         <h1 className="font-semibold text-2xl mb-1">{name}</h1>
         <div>
           <Badge twClasses={reservaton ? 'bg-blue-400 w-fit text-white px-1 py-1 inline-block mr-1 text-sm' : 'hidden'} text="Reserved" />
